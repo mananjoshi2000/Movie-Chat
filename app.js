@@ -3,10 +3,20 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const axios = require('axios');
 
+
 const app = express();
 
-app.set('view-engine','pug');
-app.set('views','views')
+// Handlebars
+
+// const expressHbs = require('express-handlebars');
+
+// app.engine('hbs',expressHbs({layoutsDir: 'views/layouts', defaultLayout: 'main-layout.hbs'}));
+// app.set('view-engine','hbs');
+// app.set('views','views')
+
+// EJS
+app.set('view-engine','ejs');
+app.set('views','views');
 
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -16,7 +26,7 @@ app.get('/',(req,res,next)=>{
 
 app.post('/home',(req,res,next)=>{
     name = req.body.name;
-    res.render('home.pug',{name : name});
+    res.render('home.ejs',{name : name});
 });
 
 app.post('/search',(req,res,next)=>{
@@ -32,7 +42,7 @@ app.post('/search',(req,res,next)=>{
         });
     function call(list)
     {       
-        res.render('search.pug',{movies: list});
+        res.render('search.ejs',{movies: list});
     }   
 });
 
@@ -49,7 +59,7 @@ app.use('/details',(req,res,next)=>{
         });
     function call(data)
     {       
-        res.render('details.pug',{details: data});
+        res.render('details.ejs',{details: data});
     }   
 });
 

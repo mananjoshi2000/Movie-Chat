@@ -1,0 +1,28 @@
+    <body>
+        <header class="navbar d-flex justify-content-center" style="background-color: rgb(209, 206, 33);">
+            <h1 style="font-family: fantasy;"> Movie-Chat </h1>
+        </header>
+        <form action="/search" method="POST" class="form-group text-center" style="margin:30px 0px;">
+            <input type="text" name="search" style="margin: 10px 5px; height:45px; width: 400px;" placeholder="Search for movies">
+            <button type="submit" style="margin : 10px 0px; height:45px; width: 80px; border-width: 0ch; background-color: rgb(163, 228, 59);">
+                <i class="fa fa-search"></i>
+            </button>    
+        </form>
+        <main class="container-fluid row" style="width:inherit; margin-right:20px; margin-left:5px;">
+            {{#each movies}}
+                <div class="col-md-3" style="padding: 20px 10px;">
+                    <div class="text-center">
+                        <img src={{this.Poster}} style="width:80%; height:200px; padding: 0px 40px;">
+                        <h5 style="padding: 5px 40px 0px 40px;"> {{this.Title}} </h5>
+                        <h5> {{this.Year}} </h5>
+                        <form action="/details" method="POST">
+                            <input type="hidden" name="id" value={{this.imdbID}} style="margin: 10px 5px; height:45px; width: 400px;">
+                            <button type="submit" style="margin : 10px 0px; height:45px; width: 80px; border-width: 0ch; background-color: rgb(163, 228, 59);">
+                                <a> Details </a>
+                            </button>    
+                        </form>
+                    </div>
+                </div>
+            {{/each}}    
+        </main>
+    </body>            

@@ -1,0 +1,16 @@
+extends layouts/main-layout.pug
+
+block body
+    body
+        header.navbar.d-flex.justify-content-center(style="background-color: rgb(209, 206, 33);")
+            h1(style="font-family: fantasy;") Movie-Chat  
+        main(style="margin: 40px 0px")
+            article.text-center(style="font-size:50px") Welcome #{name}!
+        section.text-center(style="margin: 40px 0px;")
+            p.lead Movie-Chat welcomes you to the best Movie discussion platform 
+        form(action="/search" method="POST" class="form-group text-center")  
+            input(type="text" name="search" style="margin: 10px 5px; height:35px; width: 400px;" placeholder="Search for movies")
+            button(type="submit" style="margin : 10px 0px; height:35px; width: 80px; border-width: 0ch; background-color: rgb(163, 228, 59);")
+                i.fa.fa-search
+        div.container#search_result         
+       
