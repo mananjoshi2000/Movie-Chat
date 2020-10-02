@@ -1,33 +1,40 @@
 <%- include('layouts/header.ejs') %>
 
 <body>
-    <header class="navbar d-flex justify-content-center"style="background-color: rgb(209, 206, 33);">
-        <h1 style="font-family: fantasy;"> Movie-Chat </h1>
-    </header>
-    <main class="container-fluid row" style="padding:0px; height: 700px;">
-        <div class="col-md-6" style="padding-top: 50px; padding-left: 200px;">
-            <img src="<%= details.Poster %>" style="width:400px; height:600px;">
-        </div>    
-        <div class="col-md-6" style="padding-top:60px;">
-                <h5> Title: <strong> <%=details.Title %> </strong> </h5>                       
-                <h5> Year: <strong> <%= details.Year %> </strong> </h5>                        
-                <h5> Rated: <strong> <%= details.Rated %> </strong> </h5>                        
-                <h5> Date of Release: <strong> <%= details.Released %> </strong></h5>                        
-                <h5> Genre: <strong> <%= details.Genre %> </strong></h5>                       
-                <h5> Director: <strong> <%= details.Director %> </strong></h5>                       
-                <h5> Writers: <strong> <%= details.Writer %> </strong></h5>                       
-                <h5> Actors: <strong> <%= details.Actors %> </strong> </h5>                       
-                <h5> Plot: <strong> <%= details.Plot %> </strong> </h5>                      
-                <h5> Language: <strong> <%= details.Language %> </strong> </h5>                      
-                <h5> Awards: <strong> <%= details.Awards %> </strong> </h5>                       
-                <h5> Ratings: <br>
-                    <% details.Ratings.forEach((details)=> { %>
-                        <strong> &emsp; <%= details.Source %> : <%= details.Value %> </strong>
-                            <br>
-                    <% }) %>   
-                </h5>    
-        </div>
-    </main>
-</body>    
+  <header
+    class="navbar d-flex justify-content-center"
+    style=" background: linear-gradient(
+          90deg,
+          rgba(34, 193, 195, 1) 0%,
+          rgba(253, 187, 45, 1) 100%"
+  >
+    <h1 style="font-family: fantasy">Movie-Chat</h1>
+  </header>
+  <main class="container-fluid row" style="padding: 0px; height: 700px">
+    <div class="col-md-6" style="padding-top: 50px; padding-left: 200px">
+      <img src="<%= details.Poster %>" style="width: 400px; height: 600px" />
+    </div>
+    <div class="col-md-6" style="padding-top: 60px">
+      <h5>Title: <strong> <%=details.Title %> </strong></h5>
+      <h5>Year: <strong> <%= details.Year %> </strong></h5>
+      <h5>Rated: <strong> <%= details.Rated %> </strong></h5>
+      <h5>Date of Release: <strong> <%= details.Released %> </strong></h5>
+      <h5>Genre: <strong> <%= details.Genre %> </strong></h5>
+      <h5>Director: <strong> <%= details.Director %> </strong></h5>
+      <h5>Writers: <strong> <%= details.Writer %> </strong></h5>
+      <h5>Actors: <strong> <%= details.Actors %> </strong></h5>
+      <h5>Plot: <strong> <%= details.Plot %> </strong></h5>
+      <h5>Language: <strong> <%= details.Language %> </strong></h5>
+      <h5>Awards: <strong> <%= details.Awards %> </strong></h5>
+      <h5>
+        Ratings: <br />
+        <% details.Ratings.forEach((details)=> { %>
+        <strong> &emsp; <%= details.Source %> : <%= details.Value %> </strong>
+        <br />
+        <% }) %>
+      </h5>
+    </div>
+  </main>
+</body>
 
 <%- include('layouts/footer.ejs') %>

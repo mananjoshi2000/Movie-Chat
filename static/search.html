@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <header class="navbar d-flex justify-content-center" style="background-color: rgb(209, 206, 33);">
+    <header class="navbar d-flex justify-content-center" style=" background: linear-gradient(
+          90deg,
+          rgba(34, 193, 195, 1) 0%,
+          rgba(253, 187, 45, 1) 100%">
         <h1 style="font-family: fantasy;"> Movie-Chat </h1>
     </header>    
     <form action="/search" method="POST" class="form-group text-center">  
         <input type="text" name="search" style="margin: 10px 5px; height:35px; width: 400px;" placeholder="Search for movies">
-        <button type="submit" style="margin : 10px 0px; height:35px; width: 80px; border-width: 0ch; background-color: rgb(163, 228, 59);">
+        <button type="submit" style="margin : 10px 0px; height:35px; width: 80px; border-radius: 3%; background-color: rgb(163, 228, 59);">
             <i class="fa.fa-search"></i>
         </button>    
     <div class="container" id="search_result">
